@@ -7,11 +7,6 @@ public class TransformComponent : NetworkBehaviour
 {
     public float moveSpeed = 5;
     Vector3 velocity;
-    Rigidbody rb;
-
-    void Start() {
-        rb = GetComponent<Rigidbody>();
-    }
 
     void Update() {
         if (!isLocalPlayer) {

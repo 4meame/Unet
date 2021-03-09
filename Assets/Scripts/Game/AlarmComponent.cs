@@ -8,9 +8,7 @@ public class AlarmComponent : NetworkBehaviour
     public Vector3 offset = new Vector3(0.1f,0.0f,0.2f);
     public float sand = 0.3f;
     public float strength = 0.03f;
-    Camera camera;/// <summary>
-    /// 
-    /// </summary>
+    Camera camera;
 
     void Start() {
         camera = Camera.main;

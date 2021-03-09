@@ -12,6 +12,8 @@ public class HealthComponent : NetworkBehaviour
     public Slider healthBar;
 
     void Start() {
+        if (healthBar == null)
+            return;
         healthBar.maxValue = maxHealth;
     }
 
@@ -27,6 +29,8 @@ public class HealthComponent : NetworkBehaviour
     }
 
     void OnHealthChange(int currentHealth) {
+        if (healthBar == null)
+            return;
         healthBar.value = currentHealth;
     }
 }
