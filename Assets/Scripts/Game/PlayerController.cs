@@ -11,10 +11,6 @@ public class PlayerController : NetworkBehaviour
     Vector3 velocity;
     [SerializeField]
     NetworkStartPosition[] startPositions;
-    [Header("Health")]
-    public int currentHealth;
-    public const int maxHealth = 40;
-    public Slider healthBar;
     [Header("Shot")]
     public GameObject bulletPrefab;
     public Transform bulletSpawnPosition;
@@ -22,13 +18,19 @@ public class PlayerController : NetworkBehaviour
 
     void Start() {
         startPositions = FindObjectsOfType<NetworkStartPosition>();
-        healthBar.maxValue = maxHealth;
         viewCamera = Camera.main;
-        RpcSpawn();
+        Spawn();
     }
 
     void Update() {
-        
+        if (!isLocalPlayer) {
+            return;
+        } else {
+            Move();
+            Rotate();
+            if (Input.GetKeyDown(KeyCode.Space))
+                CmdShot();
+        }
     }
 
     public void Move() {
@@ -42,23 +44,14 @@ public class PlayerController : NetworkBehaviour
     }
 
     [Command]
-    public void CmdShot() {
+    void CmdShot() {
         var bullet = (GameObject)Instantiate(bulletPrefab, bulletSpawnPosition.position, bulletSpawnPosition.rotation);
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 10f;
         NetworkServer.Spawn(bullet);
         Destroy(bullet, 2.5f);
     }
 
-    public void TakenDamage(int damage) {
-        currentHealth -= damage;
-        if (currentHealth <= 0) {
-            currentHealth = 0;
-            Destroy(gameObject);
-        }
-    }
-
-    [ClientRpc]
-    public void RpcSpawn() {
+    public void Spawn() {
         if (isLocalPlayer) {
             Vector3 p = new Vector3(8.5f, 0.751f, -1.1f);
             if (startPositions != null && startPositions.Length > 0) {
@@ -68,7 +61,8 @@ public class PlayerController : NetworkBehaviour
         }
     }
 
-    public override void OnStartLocalPlayer() {
+    public override void OnStartLocalPlayer()
+    {
         GetComponent<MeshRenderer>().material.color = Color.blue;
     }
 }

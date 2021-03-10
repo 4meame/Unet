@@ -9,11 +9,10 @@ public class SetPositionComponent : NetworkBehaviour
 
     private void Start() {
         startPositions = FindObjectsOfType<NetworkStartPosition>();
-        RpcSpawn();
+        Spawn();
     }
 
-    [ClientRpc]
-    void RpcSpawn() {
+    void Spawn() {
         if (isLocalPlayer) {
             Vector3 p = new Vector3(8.5f,0.751f,-1.1f);
             if (startPositions != null && startPositions.Length > 0) {
