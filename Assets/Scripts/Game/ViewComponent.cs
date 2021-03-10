@@ -19,6 +19,8 @@ public class ViewComponent : NetworkBehaviour
 
     public void Rotate() {
         Vector3 mousePos = viewCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, viewCamera.transform.position.y));
+        if (Vector3.Magnitude(mousePos - transform.position) < 1.6f)
+            return;
         transform.LookAt(mousePos + Vector3.up * transform.position.y);
     }
 }

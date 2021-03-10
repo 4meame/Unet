@@ -43,7 +43,7 @@ public class AlarmComponent : NetworkBehaviour
     public void Exposed() {
         currentExpose = Mathf.Max(0, currentExpose -= Time.deltaTime / 2);
         if (currentExpose <= 0)
-            // Destroy(gameObject);
+            Destroy(gameObject);
             return;
     }
 
