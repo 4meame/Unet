@@ -7,7 +7,7 @@ using UnityEngine.Networking;
 public class AlarmComponent : NetworkBehaviour
 {
     [Header("Exposed Index")]
-    public const float exposeThresold = 2.0f;
+    public const float exposeThresold = 4.0f;
     [SyncVar(hook = "OnExposeChange")]
     public float currentExpose = exposeThresold;
     public float epRecoverTime = 1.0f;

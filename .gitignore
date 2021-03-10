@@ -13,8 +13,8 @@
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
-/[LI]ibrary/
-[Ttemp]/
+/[Ll]ibrary/
+[Tt]emp/
 [Oo]bj/
 [Bb]uild/
 [Bb]uilds/
