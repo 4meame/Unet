@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.Networking;
 
 public class HealthComponent : NetworkBehaviour
-{
+{ 
     public const int maxHealth = 40;
     [SyncVar(hook = "OnHealthChange")]
     public int currentHealth = maxHealth;

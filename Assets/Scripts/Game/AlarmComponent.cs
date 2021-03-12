@@ -47,8 +47,7 @@ public class AlarmComponent : NetworkBehaviour
             return;
     }
 
-    void OnExposeChange(float currentExpose)
-    {
+    void OnExposeChange(float currentExpose) {
         exposeBar.value = currentExpose;
     }
 

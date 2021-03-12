@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class ShotComponent : NetworkBehaviour
+public class ShotComponent : PlayerController
 {
     public GameObject bulletPrefab;
     public Transform bulletSpawn;

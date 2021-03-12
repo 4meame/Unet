@@ -566,10 +566,10 @@ GameObject:
   - component: {fileID: 4365173223237628726}
   - component: {fileID: 4365173223237628684}
   - component: {fileID: 7957745083568696127}
+  - component: {fileID: 3653288283032120644}
+  - component: {fileID: 3121515960168367528}
   - component: {fileID: 4365173223237628722}
   - component: {fileID: 1945161644}
-  - component: {fileID: 3121515960168367528}
-  - component: {fileID: 3653288283032120644}
   - component: {fileID: 3746136461643472562}
   - component: {fileID: 7830731106396916758}
   m_Layer: 0
@@ -691,6 +691,39 @@ MonoBehaviour:
   bulletPrefab: {fileID: 8878239615937341261, guid: 525bf9fe0a7fc9744b47d252e51bb797,
     type: 3}
   bulletSpawnPosition: {fileID: 5673803886241739168}
+--- !u!114 &3653288283032120644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4365173223237628727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3476578048b18bf4f9fb141c2c11da49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentExpose: 4
+  epRecoverTime: 1
+  exposeBar: {fileID: 7155827525123723097}
+  isQuake: 1
+  offset: {x: 0.1, y: 0, z: 0.2}
+  sand: 0.2
+  strength: 0.013
+--- !u!114 &3121515960168367528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4365173223237628727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 608a3a0b643dbcb47a0aceae098089f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 40
+  healthBar: {fileID: 8871143382416177264}
 --- !u!114 &4365173223237628722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -729,39 +762,6 @@ MonoBehaviour:
   findEdgeIterations: 8
   edgeDstThresold: 0.9
   maskCutDistance: 0.13
---- !u!114 &3121515960168367528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4365173223237628727}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 608a3a0b643dbcb47a0aceae098089f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHealth: 40
-  healthBar: {fileID: 8871143382416177264}
---- !u!114 &3653288283032120644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4365173223237628727}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3476578048b18bf4f9fb141c2c11da49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentExpose: 4
-  epRecoverTime: 1
-  exposeBar: {fileID: 7155827525123723097}
-  isQuake: 1
-  offset: {x: 0.1, y: 0, z: 0.2}
-  sand: 0.2
-  strength: 0.013
 --- !u!114 &3746136461643472562
 MonoBehaviour:
   m_ObjectHideFlags: 0
